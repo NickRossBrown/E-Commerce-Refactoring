@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authorize, except: [:index, :show]
+  before_action :authorize, except: [:index, :show, :hide]
 
   def index
     @products = Product.all
@@ -24,6 +24,13 @@ class ProductsController < ApplicationController
       redirect_to '/'
     else
       render :new
+    end
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.js
     end
   end
 

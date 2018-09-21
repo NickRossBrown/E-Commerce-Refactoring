@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   post '/sign_in' => 'sessions#create'
   get 'sign_out' => 'sessions#destroy'
 
-  resources :products
+  resources :products do
+    member do
+      get 'hide'
+    end
+  end
+  
+
   resources :order_items
   resource :cart, only: [:show]
 
