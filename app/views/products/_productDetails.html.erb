@@ -1,6 +1,7 @@
 <div class="product-details" id="product-<%= @product.id %>-details">
     <h4><%= @product.name %></h4>
+    <p><--- Product Image ---> </p>
+    <p><--- Product Details ---> </p>
     <p> <%= @product.description %> </p>
-    <p> <%= @product.description %> </p>
-     <p> <%= link_to 'Hide Details',  hide_product_path(@product), class: "btn btn-warning", remote: true %></p>
+     <p> <%= link_to 'Hide Details',  hide_details_product_path(@product), class: "btn btn-warning", remote: true %></p>
 </div>

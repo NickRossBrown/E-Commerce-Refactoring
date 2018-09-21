@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   resources :products do
     member do
-      get 'hide'
+      get 'hide_details'
+      get 'show_details'
     end
   end
   

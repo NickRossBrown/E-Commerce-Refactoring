@@ -2,5 +2,5 @@
     <h4><%= product.name %></h4>
     <p> <%= product.description %> </p>
     <p> $<%= product.price %> </p>
-    <p> <%= link_to 'Product Details', product_path(product), class: "btn btn-info", remote: true %></p>
+    <p> <%= link_to 'Product Details', show_details_product_path(product), class: "btn btn-info", remote: true %></p>
 </div>
