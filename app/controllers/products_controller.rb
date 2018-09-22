@@ -43,6 +43,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    respond_to do |format|
+      format.html { redirect_to product_path }
+      format.js
+    end
+
+  end
+
   def show_details
     @product = Product.find(params[:id])
     respond_to do |format|
