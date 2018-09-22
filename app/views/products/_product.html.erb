@@ -5,8 +5,8 @@
     <p> <%= link_to 'Product Details', show_details_product_path(product), class: "btn btn-info", remote: true %></p>
     <% if admin %>
           <div class="btn-group">
-            <%= link_to 'Edit product', edit_product_path(product), class: "btn btn-warning" %>
-            <%= link_to 'Delete product', product, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %>
+            <%= link_to 'Edit product', edit_product_path(product), class: "btn btn-warning", remote: true  %>
+            <%= link_to 'Delete product', product, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger", remote: true %>
           </div>
         <% end %>
 </div>
