@@ -31,6 +31,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      respond_to do |format|
+        format.html { redirect_to product_path }
+        format.js
+      end
+    else
+      render :edit
+    end
+  end
+
   def show_details
     @product = Product.find(params[:id])
     respond_to do |format|

@@ -1,8 +1,8 @@
 <h3>Products</h3>
+<div style="height: 50px; width: 800px; background-color: <%=['blue', 'red,' 'green', 'yellow', 'green', 'purple'].sample%>;"></div>
 
 <div class="row">
   <div class="section">
-  <div style="height: 50px; width: 800px; background-color: <%=['blue', 'red,' 'green', 'yellow', 'green', 'purple'].sample%>;"></div>
   <% @products.each do |product| %>
     <div class="col s4" id="product-<%= product.id %>">
 

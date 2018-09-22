@@ -1,2 +1,3 @@
-<% binding.pry %>
-$ ('.row').hide().after('<%= j render("form") %>')
+
+$ ('.row').hide().after('<%= j render("form") %>');
+$ ('#product-<%= @product.id%>').remove();
