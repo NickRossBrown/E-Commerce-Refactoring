@@ -1,4 +1,8 @@
 
 $('.edit_product').hide();
 $('.row').show();
-$('.row').prepend('<%= j render(@product) %>');
+
+var $newdiv1 = $( "<div class='col s4' id='product-<%= @product.id %>'></div>" )
+$( '.section').prepend( $newdiv1 );
+$('#product-<%= @product.id %>').prepend('<%= j render(@product) %>');
+
