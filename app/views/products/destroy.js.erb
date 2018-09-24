@@ -1,1 +1,4 @@
 $ ('#product-<%= @product.id%>').remove();
+var $newdiv1 = $( "<div id='flash_success'></div>" )
+$( '.container').prepend( $newdiv1 );
+$('#flash_success').html('Product Successfully Deleted!')
