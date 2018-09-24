@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
+      flash[:success] = "Welcome to the Products App!"
     else
       redirect_to '/signup'
     end
