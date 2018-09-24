@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authorize, except: [:index, :show, :hide_details, :show_details]
-
+  before_action :user_is_admin, only: [:new, :create, :edit, :update, :destroy]
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
@@ -70,5 +70,13 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name, :description, :price)
+  end
+
+  def user_is_admin
+    if admin
+      return
+    else
+      redirect_to '/'
+    end
   end
 end
